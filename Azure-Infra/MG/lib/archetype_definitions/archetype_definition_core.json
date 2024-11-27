@@ -1,0 +1,24 @@
+{
+    "core": {
+        "policy_assignments": [
+            "Deny-Public-IP",
+            "Deny-RDP-From-Internet",
+            "Deny-Subnet-Without-Nsg",
+            "Deny-Network-Resources"
+        ],
+        "policy_definitions": [],
+        "policy_set_definitions": [],
+        "role_definitions": [],
+        "archetype_config": {
+            "parameters": {
+                "Deny-Subnet-Without-Nsg": {
+                    "effect" : "Audit"
+                },
+                "Deny-Network-Resources": {
+                    "effect" : "Audit"
+                }
+            },
+            "access_control": {}
+        }
+    }
+}

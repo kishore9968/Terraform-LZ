@@ -1,0 +1,16 @@
+{
+    "corp": {
+        "policy_assignments": [
+            "Deny-DataB-Pip",
+            "Deny-DataB-Sku",
+            "Deny-DataB-Vnet"
+        ],
+        "policy_definitions": [],
+        "policy_set_definitions": [],
+        "role_definitions": [],
+        "archetype_config": {
+            "parameters": {},
+            "access_control": {}
+        }
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Deny-Network-Resources",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "apiVersion": "2021-06-01",
+  "scope": null,
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Deny Networking Resource",
+    "description": "This policy prevents deployment of networking resources.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Networking"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Disabled",
+          "Deny"
+        ],
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "value": "[resourceGroup().name]",
+            "notLike": "rg-net-*"
+          },
+          {
+            "field": "type",
+            "like": "Microsoft.Network/*"
+          },
+          {
+            "field": "type",
+            "notlike": "Microsoft.Network/NetworkInterfaces*"
+          },
+          {
+            "field": "type",
+            "notlike": "Microsoft.Network/privateEndpoints*"
+          },
+          {
+            "field": "type",
+            "notlike": "Microsoft.Network/privateLinkServices*"
+          },
+          {
+            "field": "type",
+            "notlike": "Microsoft.Network/bastionHosts*"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}
