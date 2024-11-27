@@ -1,0 +1,115 @@
+{
+    "root": {
+        "policy_assignments": [
+            "Allowed-Regions",
+            "Deploy-AzActivity-Log",
+            "Azure-Security-Benchmark",
+            "Deny-PublicPaasEndpoints"
+        ],
+        "policy_definitions": [
+            "Append-AppService-httpsonly",
+            "Append-Redis-sslEnforcement",
+            "Append-AppService-latestTLS",
+            "Deploy-SQL-minTLS",
+            "Deploy-SqlMi-minTLS",
+            "Deny-Sql-minTLS",
+            "Deny-PublicIP",
+            "Deny-RDP-From-Internet",
+            "Deny-AppServiceFunctionApp-http",
+            "Deny-AppServiceApiApp-http",
+            "Deny-Databricks-NoPublicIp",
+            "Deny-Databricks-Sku",
+            "Deny-Databricks-VirtualNetwork",
+            "Deny-Private-DNS-Zones",
+            "Deny-Redis-http",
+            "Deny-Subnet-Without-Nsg",
+            "Deploy-ASC-SecurityContacts",
+            "Deploy-MySQL-sslEnforcement",
+            "Deploy-Diagnostics-AA",
+            "Deploy-Diagnostics-ACI",
+            "Deploy-Diagnostics-ACR",
+            "Deploy-Diagnostics-AnalysisService",
+            "Deploy-Diagnostics-ApiForFHIR",
+            "Deploy-Diagnostics-APIMgmt",
+            "Deploy-Diagnostics-ApplicationGateway",
+            "Deploy-Diagnostics-AVDScalingPlans",
+            "Deploy-Diagnostics-Bastion",
+            "Deploy-Diagnostics-CDNEndpoints",
+            "Deploy-Diagnostics-CognitiveServices",
+            "Deploy-Diagnostics-CosmosDB",
+            "Deploy-Diagnostics-Databricks",
+            "Deploy-Diagnostics-DataExplorerCluster",
+            "Deploy-Diagnostics-DataFactory",
+            "Deploy-Diagnostics-DLAnalytics",
+            "Deploy-Diagnostics-EventGridSub",
+            "Deploy-Diagnostics-EventGridSystemTopic",
+            "Deploy-Diagnostics-EventGridTopic",
+            "Deploy-Diagnostics-ExpressRoute",
+            "Deploy-Diagnostics-Firewall",
+            "Deploy-Diagnostics-FrontDoor",
+            "Deploy-Diagnostics-Function",
+            "Deploy-Diagnostics-HDInsight",
+            "Deploy-Diagnostics-iotHub",
+            "Deploy-Diagnostics-LoadBalancer",
+            "Deploy-Diagnostics-LogicAppsISE",
+            "Deploy-Diagnostics-MariaDB",
+            "Deploy-Diagnostics-MediaService",
+            "Deploy-Diagnostics-MlWorkspace",
+            "Deploy-Diagnostics-MySQL",
+            "Deploy-Diagnostics-NetworkSecurityGroups",
+            "Deploy-Diagnostics-NIC",
+            "Deploy-Diagnostics-PostgreSQL",
+            "Deploy-Diagnostics-PowerBIEmbedded",
+            "Deploy-Diagnostics-RedisCache",
+            "Deploy-Diagnostics-Relay",
+            "Deploy-Diagnostics-SignalR",
+            "Deploy-Diagnostics-SQLElasticPools",
+            "Deploy-Diagnostics-SQLMI",
+            "Deploy-Diagnostics-TimeSeriesInsights",
+            "Deploy-Diagnostics-TrafficManager",
+            "Deploy-Diagnostics-VirtualNetwork",
+            "Deploy-Diagnostics-VM",
+            "Deploy-Diagnostics-VMSS",
+            "Deploy-Diagnostics-VNetGW",
+            "Deploy-Diagnostics-WebServerFarm",
+            "Deploy-Diagnostics-Website",
+            "Deploy-Diagnostics-WVDAppGroup",
+            "Deploy-Diagnostics-WVDHostPools",
+            "Deploy-Diagnostics-WVDWorkspace",
+            "Deny-AppServiceWebApp-http",
+            "Deny-Storage-minTLS",
+            "Deny-MySql-http",
+            "Deny-PostgreSql-http",
+            "Append-Redis-disableNonSslPort",
+            "Deploy-Storage-sslEnforcement",
+            "Deny-SqlMi-minTLS",
+            "Deploy-PostgreSQL-sslEnforcement",
+            "Deny-Network-Resources"
+        ],
+        "policy_set_definitions": [
+            "Enforce-EncryptTransit",
+            "Deny-PublicPaaSEndpoints",
+            "Deploy-MDFC-Config",
+            "Deploy-Private-DNS-Zones",
+            "Deploy-Diagnostics-LogAnalytics"
+        ],
+        "role_definitions": [],
+        "archetype_config": {
+            "parameters": {
+                "Deploy-AzActivity-Log": {
+                    "effect": "AuditIfNotExists",
+                    "operationName": "Microsoft.Sql/servers/firewallRules/write"
+                },
+                "Allowed-Regions": {
+                    "listOfAllowedLocations": [
+                        "eastus"
+                    ]
+                },
+                "Deny-PublicPaasEndpoints": {
+                    "StoragePublicIpDenyEffect": "Audit"
+                }
+            },
+            "access_control": {}
+        }
+    }
+}

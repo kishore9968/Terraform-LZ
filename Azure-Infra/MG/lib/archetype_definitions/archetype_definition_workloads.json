@@ -1,0 +1,34 @@
+{
+    "workloads": {
+        "policy_assignments": [
+            "Deny-Public-IP",
+            "Deny-RDP-From-Internet",
+            "Deny-Subnet-Without-Nsg",
+            "Deny-IP-Forwarding",
+            "Deny-Storage-http",
+            "Deploy-SQL-DB-Auditing",
+            "Deploy-SQL-Threat",
+            "Enable-DDoS-VNET",
+            "Deploy-AKS-Policy",
+            "Deny-Priv-Containers-AKS",
+            "Deny-Priv-Escalation-AKS",
+            "Enforce-AKS-HTTPS",
+            "Deny-Private-DNS-Zones",
+            "Deny-Network-Resources"
+        ],
+        "policy_definitions": [],
+        "policy_set_definitions": [],
+        "role_definitions": [],
+        "archetype_config": {
+            "parameters": {
+                "Deny-Subnet-Without-Nsg": {
+                    "effect" : "Audit"
+                },
+                "Deny-Network-Resources": {
+                    "effect" : "Audit"
+                }
+            },
+            "access_control": {}
+        }
+    }
+}

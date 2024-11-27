@@ -1,0 +1,22 @@
+{
+    "name": "Deny-Network-Resources",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "apiVersion": "2019-09-01",
+    "properties": {
+      "description": "Deny creation of networking resources.",
+      "displayName": "Deny Network Resources",
+      "notScopes": [],
+      "parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "policyDefinitionId": "${root_scope_resource_id}/providers/Microsoft.Authorization/policyDefinitions/Deny-Network-Resources",
+      "scope": "${current_scope_resource_id}",
+      "enforcementMode": "Default"
+    },
+    "location": "${default_location}",
+    "identity": {
+      "type": "None"
+    }
+  }
